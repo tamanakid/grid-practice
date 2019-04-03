@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.content-layout {
+  min-height: 100vh;
+}
+
+.bg-green {
+  background: #aaff77;
+}
+
+.bg-blue {
+  background: #77aaff;
+}
+
+.menu-layout {
+  background: #ff77aa;
+}
+
+
+/*
+  Mobile - Portrait
+*/
+@media screen and (max-width: 425px) {
+
+}
+
+
+/*
+  Mobile - Landscape
+*/
+@media screen and (max-width: 767px) {
+
+}
+
+
+/*
+  Tablet - Portrait
+*/
+@media screen and (max-width: 991px) {
+  .main {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .menu-layout {
+    position: absolute;
+    width: 100%;
+    max-height: 5em;
+  }
+
+  .content-layout {
+    padding-top: 10vh;
+  }
+
+}
+
+
+/*
+  Tablet - Landscape
+*/
+@media screen and (max-width: 1199px) {
+
+}
