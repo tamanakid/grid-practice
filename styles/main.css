@@ -1,0 +1,106 @@
+@import url("./style-classes.css");
+
+body {
+  margin: 0;
+}
+
+
+
+
+/**
+ * Desktop (Generic)
+ */
+.main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.content-layout {
+  min-height: 100vh;
+}
+
+.menu {
+  position: fixed;
+  left: 80%;
+  width: 20%;
+}
+
+.menu-bar {
+  height: 100%;
+  padding: 0 1em;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  justify-items: center;
+}
+
+.menu-dropdown.menu-dropdown-off {
+  display: none;
+  height: 0;
+}
+
+
+
+/**
+ * Tablet - Landscape
+ */
+@media screen and (max-width: 1199px) {
+
+}
+
+
+
+
+/**
+ * Tablet - Portrait
+ */
+ @media screen and (max-width: 991px) {
+
+  .main {
+    grid-template-columns: 100%;
+  }
+
+  .menu {
+    left: 0;
+    width: 100%;
+  }
+
+  .menu-bar {
+    height: 3em;
+  }
+
+  .menu-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-dropdown-el {
+    height: 2em;
+    font-size: 24px;
+  }
+
+  .content-layout {
+    padding-top: 3em;
+  }
+
+}
+
+
+
+
+/**
+ * Mobile - Landscape
+ */
+ @media screen and (max-width: 767px) {
+
+}
+
+
+
+
+/**
+ * Mobile - Portrait
+ */
+ @media screen and (max-width: 425px) {
+
+}

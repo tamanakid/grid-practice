@@ -1,17 +1,36 @@
-function toggleBgClass() {
-  if (this.hasClass("bg-green")) {
-    this.removeClass("bg-green");
-    this.addClass("bg-blue");
-  } else {
-    this.removeClass("bg-blue");
-    this.addClass("bg-green");
-  }
-}
+function onListenToggleBgClass() {
 
-function onDocumentReady() {
+  function toggleBgClass() {
+    this.toggleClass("bg-green");
+    this.toggleClass("bg-blue");
+  }
+
   var contentLayout = $(".content-layout");
 
   contentLayout.click(toggleBgClass.bind(contentLayout));
 }
+
+
+
+function onListenButtonMenu() {
+
+  function toggleMenu() {
+    this.toggleClass("menu-dropdown-off");
+  }
+
+  var buttonMenu = $(".menu-button");
+  var dropdownMenu = $(".menu-dropdown");
+
+  buttonMenu.click(toggleMenu.bind(dropdownMenu));
+}
+
+
+
+function onDocumentReady() {
+  onListenToggleBgClass();
+  onListenButtonMenu();
+}
+
+
 
 $("document").ready(onDocumentReady);
