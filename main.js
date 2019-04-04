@@ -1,11 +1,11 @@
 function onListenToggleBgClass() {
 
   function toggleBgClass() {
-    this.toggleClass("bg-green");
+    this.toggleClass("bg-gray");
     this.toggleClass("bg-blue");
   }
 
-  var contentLayout = $(".content-layout");
+  var contentLayout = $(".main-layout");
 
   contentLayout.click(toggleBgClass.bind(contentLayout));
 }
@@ -15,11 +15,11 @@ function onListenToggleBgClass() {
 function onListenButtonMenu() {
 
   function toggleMenu() {
-    this.toggleClass("menu-dropdown-off");
+    this.toggleClass("menu-contents-off");
   }
 
-  var buttonMenu = $(".menu-button");
-  var dropdownMenu = $(".menu-dropdown");
+  var buttonMenu = $(".menu-title-button");
+  var dropdownMenu = $(".menu-contents");
 
   buttonMenu.click(toggleMenu.bind(dropdownMenu));
 }

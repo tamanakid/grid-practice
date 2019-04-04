@@ -4,16 +4,16 @@ body {
 
 /* Color Styles
 */
-.bg-green {
-  background: #aaff77;
+.bg-gray {
+  background: #444;
 }
 
 .bg-blue {
-  background: #77aaff;
+  background: #7af;
 }
 
 .bg-red {
-  background: #ff77aa;
+  background: #c22;
 }
 
 
@@ -21,4 +21,18 @@ body {
 */
 span.title {
   font-size: 32px;
+}
+
+span.subtitle {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  span.title {
+    font-size: 24px;
+  }
+
+  span.subtitle {
+    font-size: 20px;
+  }
 }

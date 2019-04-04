@@ -10,33 +10,50 @@ body {
 /**
  * Desktop (Generic)
  */
+.menu {
+  position: fixed;
+  height: 100vh;
+  left: 80%;
+  width: 20%;
+
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas:
+    "title"
+    "contents"
+    ".";
+}
+
+.menu-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: title;
+}
+
+.menu-title > .menu-title-button {
+  display: none;
+}
+
+.menu-contents {
+  grid-area: contents;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-contents-el {
+  padding: 1em;
+}
+
 .main {
   display: grid;
   grid-template-columns: 4fr 1fr;
-}
-
-.content-layout {
   min-height: 100vh;
 }
 
-.menu {
-  position: fixed;
-  left: 80%;
-  width: 20%;
-}
-
-.menu-bar {
-  height: 100%;
-  padding: 0 1em;
-  display: grid;
-  grid-template-columns: 9fr 1fr;
-  justify-items: center;
-}
-
-.menu-dropdown.menu-dropdown-off {
-  display: none;
-  height: 0;
-}
 
 
 
@@ -55,32 +72,50 @@ body {
  */
  @media screen and (max-width: 991px) {
 
-  .main {
-    grid-template-columns: 100%;
-  }
-
   .menu {
+    display: block;
+    height: 4em;
     left: 0;
     width: 100%;
   }
 
-  .menu-bar {
-    height: 3em;
+  .menu-title {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: ". text button";
+    justify-items: center;
+    align-content: center;
   }
 
-  .menu-dropdown {
+  .menu-title > .menu-title-text {
+    grid-area: text;
+  }
+  
+  .menu-title > .menu-title-button {
+    display: block;
+    grid-area: button;
+  }
+
+  .menu-contents {
     display: flex;
     flex-direction: column;
+  }
+
+  .menu-contents.menu-contents-off {
+    display: none;
+  }
+
+  .menu-contents-el {
+    height: 2em;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  .menu-dropdown-el {
-    height: 2em;
-    font-size: 24px;
-  }
-
-  .content-layout {
-    padding-top: 3em;
+  .main {
+    grid-template-columns: 100%;
+    padding-top: 3.5em;
   }
 
 }
@@ -92,7 +127,13 @@ body {
  * Mobile - Landscape
  */
  @media screen and (max-width: 767px) {
+  .menu {
+    height: 3em;
+  }
 
+  .menu-contents-el {
+    padding: 0.5em;
+  }
 }
 
 
@@ -102,5 +143,7 @@ body {
  * Mobile - Portrait
  */
  @media screen and (max-width: 425px) {
-
+  .menu-title {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
 }
