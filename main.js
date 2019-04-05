@@ -15,7 +15,7 @@ function onListenToggleBgClass() {
 function onListenButtonMenu() {
 
   function toggleMenu() {
-    this.toggleClass("menu-contents-off");
+    this.toggleClass("menu-contents-on");
   }
 
   var buttonMenu = $(".menu-title-button");
