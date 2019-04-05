@@ -12,13 +12,13 @@ function onListenToggleBgClass() {
 
 
 
-function onListenButtonMenu() {
+function onListenButtonMenuMd() {
 
   function toggleMenu() {
     this.toggleClass("menu-contents-on");
   }
 
-  var buttonMenu = $(".menu-title-button");
+  var buttonMenu = $(".menu-title-button-md");
   var dropdownMenu = $(".menu-contents");
 
   buttonMenu.click(toggleMenu.bind(dropdownMenu));
@@ -26,9 +26,24 @@ function onListenButtonMenu() {
 
 
 
+function onListenToggleMenuLg() {
+
+  function toggleMenu() {
+    this.toggleClass("menu-toggle-lg-on");
+  }
+
+  var toggleMenuLg = $(".menu-toggle-lg");
+  var menu = $(".menu");
+
+  toggleMenuLg.click(toggleMenu.bind(menu));
+}
+
+
+
 function onDocumentReady() {
   onListenToggleBgClass();
-  onListenButtonMenu();
+  onListenButtonMenuMd();
+  onListenToggleMenuLg();
 }
 
 
